@@ -1,31 +1,60 @@
-/* Styles for the header */
-.header {
-  background-color: #c2ffdd;
-  color: #000000;
-  padding: 10px;
-  text-align: center;
-}
+/* Pacific Beaches — USC 130g
+   Palette: Kelp Forest */
 
-.header h1 {
-  margin: 0;
-  font-size: 64px;
-}
-
-.header h2 {
-  margin: 0;
-  font-size: 48px;
+:root {
+  --header-bg: #0B3B33;
+  --header-ink: #CFE8DC;
+  --page-bg: #E8F0EA;
+  --message-ink: #123B31;
 }
 
 /* Styles for the body */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #c2ffdd;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-bg);
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styles for the header */
+.header {
+  flex: 0 0 auto;
+  background-color: var(--header-bg);
+  color: var(--header-ink);
+  padding: clamp(14px, 2.5vw, 28px) clamp(16px, 4vw, 40px);
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 auto;
+  max-width: 20ch;
+  font-size: clamp(26px, 4.4vw, 64px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+/* The prompt fills the space below the header and stays centered,
+   sized against both width and height so the longest question
+   never runs off a projector screen. */
+.stage {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(20px, 4vh, 48px) clamp(16px, 5vw, 56px);
 }
 
 #message {
-  font-size: 96px;
+  margin: 0;
+  max-width: 24ch;
+  font-size: clamp(28px, min(6.2vw, 9.5vh), 88px);
   font-weight: bold;
-  color: #000000;
+  line-height: 1.15;
+  color: var(--message-ink);
   text-align: center;
-  margin-top: 50px;
+  text-wrap: balance;
 }
